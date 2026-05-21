@@ -14,7 +14,10 @@ A full-stack personal portfolio website to showcase my projects, skills, and exp
 - Database: MongoDB
 
 ## Deployment
-Deployment: Render   
+Deployment: Render  
+
+## Live Demo
+https://portfolio-website-39ox.onrender.com
 
 ## Author
 Akshaya
