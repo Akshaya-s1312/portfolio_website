@@ -1,16 +1,18 @@
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
-# MongoDB Connection
-client = MongoClient("mongodb+srv://akshaya131206_db_user:Akshaya1312*@cluster0.r25leqn.mongodb.net/")
+client = MongoClient(os.getenv("MONGO_URI"))
 db = client.portfolio_db
 
 projects_collection = db.projects
 messages_collection = db.messages
 
-# Sample Project Data
 if projects_collection.count_documents({}) == 0:
     projects_collection.insert_many([
         {
